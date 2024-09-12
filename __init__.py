@@ -29,6 +29,14 @@ def mapagecontact():
 @app.route('/')
 def hello_world():
     return render_template('hello.html') #comm2
+# Route pour afficher le graphique des commits
+@app.route('/commits/')
+def commits():
+    return render_template('commits_graph.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
   
 if __name__ == "__main__":
   app.run(debug=True)
