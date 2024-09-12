@@ -1,9 +1,117 @@
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Graphique</title>
- </head>  
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de Contact</title>
+    <style>
+        /* Style de base du corps */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Conteneur principal */
+        .contact-form {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        /* Titre du formulaire */
+        h1 {
+            text-align: center;
+            color: #333333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        /* Style des labels */
+        label {
+            font-size: 16px;
+            color: #555;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Style des champs du formulaire */
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #f9f9f9;
+        }
+
+        input[type="text"]:focus, textarea:focus {
+            border-color: #007bff;
+            background-color: #fff;
+            outline: none;
+        }
+
+        /* Style du bouton de soumission */
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        /* Style du champ textarea */
+        textarea {
+            height: 150px;
+            resize: none;
+        }
+
+        /* Style de la zone autour du formulaire */
+        .form-container {
+            margin-top: 20px;
+            padding: 20px;
+        }
+    </style>
+</head>
 <body>
-    <h2>Mon Graphique</h2>
+
+    <!-- Conteneur du formulaire de contact -->
+    <div class="form-container">
+        <form class="contact-form" action="#" method="post">
+            <h1>Contactez-nous</h1>
+
+            <!-- Champ pour le prénom -->
+            <label for="prenom">Prénom</label>
+            <input type="text" id="prenom" name="prenom" placeholder="Entrez votre prénom" required>
+
+            <!-- Champ pour le nom -->
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" name="nom" placeholder="Entrez votre nom" required>
+
+            <!-- Champ pour le message -->
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Votre message..." required></textarea>
+
+            <!-- Bouton de soumission -->
+            <input type="submit" value="Envoyer">
+        </form>
+    </div>
+
 </body>
 </html>
