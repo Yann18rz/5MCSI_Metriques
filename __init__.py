@@ -6,11 +6,6 @@ from urllib.request import urlopen
 import sqlite3
                                                                                                                                        
 app = Flask(__name__)
-@app.route('/extract-minutes/<date_string>')
-def extract_minutes(date_string):
-    date_object = datetime.strptime(date_string, '%Y-%m-%dT%H:%M:%SZ')
-    minutes = date_object.minute
-    return jsonify({'minutes': minutes})
 @app.route("/histogramme/")
 def monhistogramme():
     return render_template("histogramme.html")
@@ -37,26 +32,3 @@ def hello_world():
   
 if __name__ == "__main__":
   app.run(debug=True)
-async function fetchCommits() {
-  const response = await fetch('https://api.github.com/repos/OpenRSI/5MCSI_Metriques/commits');
-  const commits = await response.json();
-  return commits;
-}
-async function getCommitData() {
-  const commits = await fetchCommits();
-  const minuteCount = {};
-
-  commits.forEach(commit => {
-    const dateString = commit.commit.author.date;
-    const dateObject = new Date(dateString);
-    const minute = dateObject.getUTCMinutes(); // Extraire la minute
-
-    if (minuteCount[minute]) {
-      minuteCount[minute] += 1; // Incrémente le nombre de commits pour cette minute
-    } else {
-      minuteCount[minute] = 1; // Initialiser à 1 si c'est le premier commit de cette minute
-    }
-  });
-
-  return minuteCount;
-}
